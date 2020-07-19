@@ -43,7 +43,7 @@ To generate this readme: `node readme.js`
 
 Start up the Kubernetes cluster with Minikube, giving it some extra resources.
 
-`minikube start --memory 8000 --cpus 2 --kubernetes-version v1.11.0`
+`minikube start --memory 8000 --cpus 2 --kubernetes-version v1.18.3 --driver=virtualbox`
 
 #### Step2
 

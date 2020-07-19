@@ -30,7 +30,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: jenkins
-  namespace: default
+  namespace: plygrnd
 automountServiceAccountToken: true
 
 ---
@@ -46,7 +46,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: jenkins
-  namespace: default
+  namespace: plygrnd
 
 ---
 
@@ -84,13 +84,16 @@ spec:
 
 ---
 
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: jenkins
   labels:
     app: jenkins
 spec:
+  selector:
+    matchLabels:
+      app: jenkins
   strategy:
     type: Recreate
   template:
